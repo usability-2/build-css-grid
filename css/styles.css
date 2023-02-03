@@ -1,0 +1,53 @@
+html {
+    font-size: 100%; 
+    /* browser default size for scalabiliy */
+}
+
+body {
+    /* increase the base font size to 18px, this will give a line-height of 27px */
+    font-size: 1.125rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #323232;
+}
+
+.inner-container {
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* ************************ typography *************** */
+h1 {
+    /* to keep with the baseline sizing, add a line height that is either 27px or a multiplier of 27 */
+    font-size: 2rem;
+    line-height: 3.375rem;
+}
+
+h1 a {
+    color: #323232;
+    text-decoration: none;
+}
+
+/* *********************** header ********************** */
+header {
+    border-bottom: 1px solid rgb(222, 222, 222);
+    box-shadow: 0 0 8px rgb(222, 222, 222);
+}
+
+header > .inner-container {
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+header nav {
+    flex: 0 0 100%;
+}
+
+header button {
+    width: 3.4375rem;
+    padding: 0.5rem;
+    background-color: #fff;
+    border: none;
+}
