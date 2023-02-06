@@ -135,6 +135,13 @@ header button {
     }
 }
 
+@media screen and (min-width: 1900px) {
+    .popular-posts article {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
 /* ****************** footer **************** */
 footer {
     border-top: 1px solid rgb(222, 222, 222);
@@ -153,6 +160,12 @@ footer li {
     margin-bottom: 0.75rem;
 }
 
+footer input {
+    line-height: 2.5rem;
+    padding-left: 0.5rem;
+    width: 100%;
+}
+
 @media screen and (min-width: 500px) {
     .footer-grid-container {
         display: grid;
@@ -168,5 +181,27 @@ footer li {
     footer .col:nth-of-type(2),
     footer .col:nth-of-type(3) {
         grid-column: span 2;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    footer .col:first-of-type {
+        grid-column: 1 / span 2;
+    }
+
+    footer .col:nth-of-type(2),
+    footer .col:nth-of-type(3) {
+        grid-column: span 1;
+    }
+
+}
+
+@media screen and (min-width: 1320px) {
+    footer .col:first-of-type {
+        grid-column: 1 / span 1;
+    }
+
+    footer .col:last-of-type {
+        grid-column: 4 / span 1;
     }
 }
