@@ -43,6 +43,13 @@ header > .inner-container {
 
 header nav {
     flex: 0 0 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height ease-in-out 1s;
+}
+
+.show {
+    max-height: 400px;
 }
 
 header button {
@@ -50,4 +57,116 @@ header button {
     padding: 0.5rem;
     background-color: #fff;
     border: none;
+}
+
+.nav-links li {
+    line-height: 3.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.nav-links a {
+    display: block;
+    padding-left: 0.75rem;
+}
+
+@media screen and (min-width: 600px) {
+    .ham-btn {
+        display: none;
+    }
+
+    header nav {
+        max-height: unset;
+        flex: 0 1 auto;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+/* ****************** main **************** */
+.recent-posts > article {
+    margin-bottom: 1rem;
+}
+
+.popular-posts > article {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.popular-posts div {
+    padding: 0 1rem;
+}
+
+@media screen and (min-width: 950px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+
+    .recent-posts {
+        grid-column: 1 / span 8;
+        /* similar to align-items from flexbox - except this goes on the child that is stretching from top to bottom */
+        align-self: start;
+    }
+
+    .popular-posts {
+        grid-column: 9 / span 4;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    .recent-posts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .recent-posts h2,
+    .recent-posts article:first-of-type {
+        grid-column: 1 / -1;
+    }
+
+    .popular-posts h2 {
+        margin-bottom: 1rem;
+    }
+}
+
+/* ****************** footer **************** */
+footer {
+    border-top: 1px solid rgb(222, 222, 222);
+}
+
+footer .col {
+    margin-bottom: 1rem;
+}
+
+footer a {
+    display: block;
+}
+
+footer li {
+    line-height: 3rem;
+    margin-bottom: 0.75rem;
+}
+
+@media screen and (min-width: 500px) {
+    .footer-grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    footer .col:first-of-type,
+    footer .col:last-of-type {
+        grid-column: 1 / -1;
+    }
+
+    footer .col:nth-of-type(2),
+    footer .col:nth-of-type(3) {
+        grid-column: span 2;
+    }
 }
