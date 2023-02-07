@@ -1,0 +1,55 @@
+.recent-posts > article {
+    margin-bottom: 1rem;
+}
+
+.popular-posts > article {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.popular-posts div {
+    padding: 0 1rem;
+}
+
+@media screen and (min-width: 950px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+
+    .recent-posts {
+        grid-column: 1 / span 8;
+        /* similar to align-items from flexbox - except this goes on the child that is stretching from top to bottom */
+        align-self: start;
+    }
+
+    .popular-posts {
+        grid-column: 9 / span 4;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    .recent-posts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .recent-posts h2,
+    .recent-posts article:first-of-type {
+        grid-column: 1 / -1;
+    }
+
+    .popular-posts h2 {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .popular-posts article {
+        display: flex;
+        align-items: flex-start;
+    }
+}

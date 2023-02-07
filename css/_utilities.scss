@@ -1,0 +1,19 @@
+@use 'colors';
+
+html {
+    font-size: 100%; 
+    /* browser default size for scalabiliy */
+}
+
+body {
+    /* increase the base font size to 18px, this will give a line-height of 27px */
+    font-size: 1.125rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: colors.$off-black;
+}
+
+.inner-container {
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 1rem;
+}

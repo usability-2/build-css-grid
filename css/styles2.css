@@ -1,0 +1,276 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  font-size: 100%;
+  /* browser default size for scalabiliy */
+}
+
+body {
+  /* increase the base font size to 18px, this will give a line-height of 27px */
+  font-size: 1.125rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #323232;
+}
+
+.inner-container {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  /* to keep with the baseline sizing, add a line height that is either 27px or a multiplier of 27 */
+  font-size: 2rem;
+  line-height: 3.375rem;
+}
+h1 a {
+  color: #323232;
+  text-decoration: none;
+}
+
+header {
+  border-bottom: 1px solid rgb(222, 222, 222);
+  box-shadow: 0 0 8px rgb(222, 222, 222);
+}
+header .inner-container {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+header nav {
+  flex: 0 0 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height ease-in-out 1s;
+}
+header button {
+  width: 3.4375rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: none;
+}
+
+.nav-links li {
+  line-height: 3.5rem;
+  margin-bottom: 0.75rem;
+}
+.nav-links a {
+  display: block;
+  padding-left: 0.75rem;
+}
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.show {
+  max-height: 400px;
+}
+
+@media screen and (min-width: 600px) {
+  .ham-btn {
+    display: none;
+  }
+  header nav {
+    max-height: unset;
+    flex: 0 1 auto;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+  }
+}
+.recent-posts > article {
+  margin-bottom: 1rem;
+}
+
+.popular-posts > article {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.popular-posts div {
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 950px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+  .recent-posts {
+    grid-column: 1/span 8;
+    /* similar to align-items from flexbox - except this goes on the child that is stretching from top to bottom */
+    align-self: start;
+  }
+  .popular-posts {
+    grid-column: 9/span 4;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .recent-posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .recent-posts h2,
+.recent-posts article:first-of-type {
+    grid-column: 1/-1;
+  }
+  .popular-posts h2 {
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .popular-posts article {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+footer {
+  border-top: 1px solid rgb(222, 222, 222);
+}
+footer .col {
+  margin-bottom: 1rem;
+}
+footer a {
+  display: block;
+}
+footer li {
+  line-height: 3rem;
+  margin-bottom: 0.75rem;
+}
+footer input {
+  line-height: 2.5rem;
+  padding-left: 0.5rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .footer-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  footer .col:first-of-type,
+footer .col:last-of-type {
+    grid-column: 1/-1;
+  }
+  footer .col:nth-of-type(2),
+footer .col:nth-of-type(3) {
+    grid-column: span 2;
+  }
+}
+@media screen and (min-width: 850px) {
+  footer .col:first-of-type {
+    grid-column: 1/span 2;
+  }
+  footer .col:nth-of-type(2),
+footer .col:nth-of-type(3) {
+    grid-column: span 1;
+  }
+}
+@media screen and (min-width: 1320px) {
+  footer .col:first-of-type {
+    grid-column: 1/span 1;
+  }
+  footer .col:last-of-type {
+    grid-column: 4/span 1;
+  }
+}
+/*# sourceMappingURL=styles2.css.map */

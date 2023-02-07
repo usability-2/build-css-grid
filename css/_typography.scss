@@ -1,0 +1,11 @@
+@use 'colors';
+
+h1 {
+    /* to keep with the baseline sizing, add a line height that is either 27px or a multiplier of 27 */
+    font-size: 2rem;
+    line-height: 3.375rem;
+    a {
+        color: colors.$off-black;
+        text-decoration: none;
+    }
+}

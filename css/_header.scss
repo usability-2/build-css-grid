@@ -1,0 +1,56 @@
+header {
+    border-bottom: 1px solid rgb(222, 222, 222);
+    box-shadow: 0 0 8px rgb(222, 222, 222);
+    .inner-container {
+        display: flex;
+        align-items: center;
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+    nav {
+        flex: 0 0 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height ease-in-out 1s;
+    }
+    button {
+        width: 3.4375rem;
+        padding: 0.5rem;
+        background-color: #fff;
+        border: none;
+    }
+}
+
+.nav-links {
+    li {
+        line-height: 3.5rem;
+        margin-bottom: 0.75rem;
+    }
+    a {
+        display: block;
+        padding-left: 0.75rem;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.show {
+    max-height: 400px;
+}
+
+@media screen and (min-width: 600px) {
+    .ham-btn {
+        display: none;
+    }
+
+    header nav {
+        max-height: unset;
+        flex: 0 1 auto;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+    }
+}
